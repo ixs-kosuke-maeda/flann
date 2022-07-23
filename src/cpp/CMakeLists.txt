@@ -34,7 +34,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" AND CMAKE_COMPILER_IS_GNUCC)
     set_target_properties(flann_cpp PROPERTIES LINKER_LANGUAGE CXX COMPILE_FLAGS -fPIC)
 
     if (BUILD_CUDA_LIB)
-        // TODO: support CMake 3.x
+        # TODO: support CMake 3.x
         cuda_add_library(flann_cuda SHARED "")
         set_target_properties(flann_cuda PROPERTIES LINKER_LANGUAGE CXX)
         target_link_libraries(flann_cuda -Wl,-whole-archive flann_cuda_s -Wl,-no-whole-archive)
